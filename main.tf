@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-west-1"
+  region = "us-west-2"
 }
 
 variable instance_name {}
@@ -48,10 +48,6 @@ resource "aws_instance" "foo" {
   network_interface {
     network_interface_id = aws_network_interface.foo.id
     device_index         = 0
-  }
-
-  credit_specification {
-    cpu_credits = "unlimited"
   }
 
   tags = {
